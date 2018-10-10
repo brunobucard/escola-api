@@ -1,6 +1,7 @@
 package com.escola.api.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -30,6 +31,67 @@ public class Aluno {
 	@Column(name="data_nascimento")
 	private String dataNascimento;
 	
+	private String naturalidade;
+	
+	@Column(name="naturalidade_estado")
+	private String naturalidadeEstado;
+	
+	private String nacionalidade;
+	
+	private String cpf;
+	
+	private String identidade;
+	
+	@Column(name="identidade_emissao")
+	private String identididadeEmissao;
+	
+	@Column(name="identidade_emissor")
+	private String identidadeEmissor;
+	
+	@Column(name="identidade_emissor_estado")
+	private String identidadeEmissorEstado;
+	
+	@Column(name="certidao_nascimento")
+	private String certidaoNascimento;
+	
+	@Column(name="certidao_data")
+	private String certidaoData;
+	
+	@Column(name="certidao_livro")
+	private String certidaoLivro;
+	
+	@Column(name="certidao_folhas")
+	private String certidaoFolhas;
+	
+	@Column(name="certidao_cartorio")
+	private String certidaoCartorio;
+	
+	@Column(name="certidao_estado")
+	private String certidaoEstado;
+	
+	@Embedded	
+	private Endereco endereco;
+	
+	private Saude saude;
+	
+	private String telefone;
+	
+	private String celular;
+	
+	@Column(name="pais_separados")
+	private Boolean paisSeparados;
+	
+	@Column(name="reside_com")
+	private String resideCom;
+	
+	@Column(name="escola_origem")
+	private String escolaOrigem;
+	
+	@Column(name="escola_origem_cidade")
+	private String escolaOrigemCidade;
+	
+	@Column(name="escola_origem_estado")
+	private String escolaOrigemEstado;
 	
 	private String religiao;
 	
@@ -151,6 +213,194 @@ public class Aluno {
 
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
+	}
+	
+	
+
+	public String getNaturalidade() {
+		return naturalidade;
+	}
+
+	public void setNaturalidade(String naturalidade) {
+		this.naturalidade = naturalidade;
+	}
+
+	public String getNaturalidadeEstado() {
+		return naturalidadeEstado;
+	}
+
+	public void setNaturalidadeEstado(String naturalidadeEstado) {
+		this.naturalidadeEstado = naturalidadeEstado;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getIdentidade() {
+		return identidade;
+	}
+
+	public void setIdentidade(String identidade) {
+		this.identidade = identidade;
+	}
+
+	public String getIdentididadeEmissao() {
+		return identididadeEmissao;
+	}
+
+	public void setIdentididadeEmissao(String identididadeEmissao) {
+		this.identididadeEmissao = identididadeEmissao;
+	}
+
+	public String getIdentidadeEmissor() {
+		return identidadeEmissor;
+	}
+
+	public void setIdentidadeEmissor(String identidadeEmissor) {
+		this.identidadeEmissor = identidadeEmissor;
+	}
+
+	public String getIdentidadeEmissorEstado() {
+		return identidadeEmissorEstado;
+	}
+
+	public void setIdentidadeEmissorEstado(String identidadeEmissorEstado) {
+		this.identidadeEmissorEstado = identidadeEmissorEstado;
+	}
+
+	public String getCertidaoNascimento() {
+		return certidaoNascimento;
+	}
+
+	public void setCertidaoNascimento(String certidaoNascimento) {
+		this.certidaoNascimento = certidaoNascimento;
+	}
+
+	public String getCertidaoData() {
+		return certidaoData;
+	}
+
+	public void setCertidaoData(String certidaoData) {
+		this.certidaoData = certidaoData;
+	}
+
+	public String getCertidaoLivro() {
+		return certidaoLivro;
+	}
+
+	public void setCertidaoLivro(String certidaoLivro) {
+		this.certidaoLivro = certidaoLivro;
+	}
+
+	public String getCertidaoFolhas() {
+		return certidaoFolhas;
+	}
+
+	public void setCertidaoFolhas(String certidaoFolhas) {
+		this.certidaoFolhas = certidaoFolhas;
+	}
+
+	public String getCertidaoCartorio() {
+		return certidaoCartorio;
+	}
+
+	public void setCertidaoCartorio(String certidaoCartorio) {
+		this.certidaoCartorio = certidaoCartorio;
+	}
+
+	public String getCertidaoEstado() {
+		return certidaoEstado;
+	}
+
+	public void setCertidaoEstado(String certidaoEstado) {
+		this.certidaoEstado = certidaoEstado;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public Boolean getPaisSeparados() {
+		return paisSeparados;
+	}
+
+	public void setPaisSeparados(Boolean paisSeparados) {
+		this.paisSeparados = paisSeparados;
+	}
+
+	public String getResideCom() {
+		return resideCom;
+	}
+
+	public void setResideCom(String resideCom) {
+		this.resideCom = resideCom;
+	}
+
+	public String getEscolaOrigem() {
+		return escolaOrigem;
+	}
+
+	public void setEscolaOrigem(String escolaOrigem) {
+		this.escolaOrigem = escolaOrigem;
+	}
+
+	public String getEscolaOrigemCidade() {
+		return escolaOrigemCidade;
+	}
+
+	public void setEscolaOrigemCidade(String escolaOrigemCidade) {
+		this.escolaOrigemCidade = escolaOrigemCidade;
+	}
+
+	public String getEscolaOrigemEstado() {
+		return escolaOrigemEstado;
+	}
+
+	public void setEscolaOrigemEstado(String escolaOrigemEstado) {
+		this.escolaOrigemEstado = escolaOrigemEstado;
+	}
+	
+	
+
+	public Saude getSaude() {
+		return saude;
+	}
+
+	public void setSaude(Saude saude) {
+		this.saude = saude;
 	}
 
 	@Override
