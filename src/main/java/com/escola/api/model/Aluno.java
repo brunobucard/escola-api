@@ -72,6 +72,7 @@ public class Aluno {
 	@Embedded	
 	private Endereco endereco;
 	
+	@Embedded
 	private Saude saude;
 	
 	private String telefone;
@@ -116,7 +117,8 @@ public class Aluno {
 	@ManyToOne
 	@JoinColumn(name="codigo_responsavel")
 	private Responsavel responsavel;
-
+	
+	
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -402,6 +404,8 @@ public class Aluno {
 	public void setSaude(Saude saude) {
 		this.saude = saude;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
