@@ -20,6 +20,14 @@ public class AlunoService {
 		return alunoRepository.save(alunoSalvo);
 	}
 	
+	
+	
+	public void atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
+		Aluno alunoSalvo = buscarAlunoPeloCodigo(codigo);
+		alunoSalvo.setAtivo(ativo);
+		alunoRepository.save(alunoSalvo);
+	}
+	
 	private Aluno buscarAlunoPeloCodigo(Long codigo) {
 		Aluno alunoSalvo = alunoRepository.findOne(codigo);
 		if (alunoSalvo == null) {
@@ -27,6 +35,5 @@ public class AlunoService {
 		}
 		return alunoSalvo;
 	}
-	
 
 }

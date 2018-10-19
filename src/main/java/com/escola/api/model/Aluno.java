@@ -12,7 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="aluno")
@@ -406,6 +409,11 @@ public class Aluno {
 		this.saude = saude;
 	}
 	
+	@JsonIgnore
+	@Transient
+	public boolean isInativo() {
+		return !this.ativo;
+	}
 
 
 	@Override

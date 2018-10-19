@@ -73,5 +73,12 @@ public class AlunoResource {
 		Aluno alunoSalvo = alunoService.atualizar(codigo, aluno);
 		return ResponseEntity.ok(alunoSalvo);
 	}
+	
+	@PutMapping("/{codigo}/ativo")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_ALUNO') and #oauth2.hasScope('write')")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void atualizarPropriedadeAtivo(@PathVariable Long codigo, @RequestBody Boolean ativo) {
+		alunoService.atualizarPropriedadeAtivo(codigo, ativo);
+	}
 
 }
