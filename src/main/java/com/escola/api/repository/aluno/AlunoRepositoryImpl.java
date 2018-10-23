@@ -1,4 +1,4 @@
-package com.escola.api.repository.pessoa;
+package com.escola.api.repository.aluno;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +68,10 @@ public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
 		
 		if(!StringUtils.isEmpty(alunoFilter.getNome())) {
 			predicates.add(builder.like(builder.lower(root.get(Aluno_.nome)),"%" +  alunoFilter.getNome().toLowerCase() + "%"));
+		}
+		
+		if(!StringUtils.isEmpty(alunoFilter.getResponsavel())) {
+			predicates.add(builder.like(builder.lower(root.get(Aluno_.responsavel)), "%" + alunoFilter.getResponsavel().toLowerCase() + "%"));
 		}
 		
 		return predicates.toArray(new Predicate[predicates.size()]);
