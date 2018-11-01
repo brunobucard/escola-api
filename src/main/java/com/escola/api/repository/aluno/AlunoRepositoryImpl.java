@@ -70,9 +70,7 @@ public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
 			predicates.add(builder.like(builder.lower(root.get(Aluno_.nome)),"%" +  alunoFilter.getNome().toLowerCase() + "%"));
 		}
 		
-		if(!StringUtils.isEmpty(alunoFilter.getResponsavel())) {
-			predicates.add(builder.like(builder.lower(root.get(Aluno_.responsavel)), "%" + alunoFilter.getResponsavel().toLowerCase() + "%"));
-		}
+	
 		
 		return predicates.toArray(new Predicate[predicates.size()]);
 	}
