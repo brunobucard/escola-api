@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.escola.api.event.RecursoCriadoEvent;
 import com.escola.api.model.Usuario;
 import com.escola.api.repository.UsuarioRepository;
+import com.escola.api.service.UsuarioService;
 
 
 @RestController
@@ -27,6 +28,9 @@ public class UsuarioResource {
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private UsuarioService UsuarioService;
 	
 	@Autowired
 	private ApplicationEventPublisher publisher;
@@ -40,7 +44,7 @@ public class UsuarioResource {
 	@PostMapping
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_USUARIO') and #oauth2.hasScope('write')")
 	public ResponseEntity<Usuario> criar(@Valid @RequestBody Usuario usuario, HttpServletResponse response) {
-		Usuario usuarioSalvo = usuarioRepository.save(usuario);
+		Usuario usuarioSalvo = UsuarioService.novoUsuario(usuario);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, usuarioSalvo.getCodigo()));
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo);
 	}
