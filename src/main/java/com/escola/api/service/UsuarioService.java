@@ -1,7 +1,6 @@
 package com.escola.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +17,7 @@ public class UsuarioService {
 	private PasswordEncoder passwordEncoder;
 	
 	public Usuario novoUsuario(Usuario usuario) {
-		//Usuario usuarioSalvo;
-		//usuarioSalvo.setSenha(passwordEncoder.encode(usuario.getSenha()));
-		usuario.setSenha("senha");
+		usuario.setSenha(this.passwordEncoder.encode(usuario.getSenha()));
 		return usuarioRepository.save(usuario);
 	}
 	
