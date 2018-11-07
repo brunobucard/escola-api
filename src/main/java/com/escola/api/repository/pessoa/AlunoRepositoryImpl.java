@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 
 import com.escola.api.model.Aluno;
 import com.escola.api.model.Aluno_;
+import com.escola.api.repository.aluno.AlunoRepositoryQuery;
 import com.escola.api.repository.filter.AlunoFilter;
 
 public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
