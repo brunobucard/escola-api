@@ -2,9 +2,15 @@ package com.escola.api.repository.filter;
 
 public class AlunoFilter {
 	
+<<<<<<< HEAD
 	private String nome;	
 	private String responsavel;
 	
+=======
+	private String nome;
+	
+	private String responsavel;
+>>>>>>> branch 'master' of https://brunobucard@bitbucket.org/brunobucard/escola-api.git
 
 	public String getNome() {
 		return nome;
@@ -21,6 +27,10 @@ public class AlunoFilter {
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://brunobucard@bitbucket.org/brunobucard/escola-api.git
 	
 	
 

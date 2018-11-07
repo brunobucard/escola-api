@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.escola.api.event.RecursoCriadoEvent;
 import com.escola.api.model.Aluno;
 import com.escola.api.repository.AlunoRepository;
+import com.escola.api.repository.filter.AlunoFilter;
 import com.escola.api.service.AlunoService;
 
 @RestController
@@ -49,8 +50,8 @@ public class AlunoResource {
 	
 	@GetMapping
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_ALUNO')")
-	public Page<Aluno> pesquisar(@RequestParam(required = false, defaultValue = "%") String nome, Pageable pageable){
-		return alunoRepository.findByNomeContaining(nome, pageable);
+	public Page<Aluno> pesquisar(AlunoFilter alunoFilter, Pageable pageable){
+		return alunoRepository.filtrar(alunoFilter, pageable);
 	}
 	
 	@GetMapping("/{codigo}")

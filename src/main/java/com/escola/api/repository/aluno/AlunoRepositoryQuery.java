@@ -1,4 +1,4 @@
-package com.escola.api.repository.pessoa;
+package com.escola.api.repository.aluno;
 
 
 
