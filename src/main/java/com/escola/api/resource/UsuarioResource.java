@@ -44,6 +44,13 @@ public class UsuarioResource {
 		return usuarioRepository.findAll();
 	}
 	
+	@GetMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_USUARIO') and #oauth2.hasScope('read')")
+	public ResponseEntity<Usuario> buscarPeloCodigo(@PathVariable Long codigo) {
+		Usuario usuario = usuarioRepository.findOne(codigo);
+		return usuario != null ? ResponseEntity.ok(usuario) : ResponseEntity.notFound().build();
+	}
+	
 	@PostMapping
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_USUARIO') and #oauth2.hasScope('write')")
 	public ResponseEntity<Usuario> criar(@Valid @RequestBody Usuario usuario, HttpServletResponse response) {

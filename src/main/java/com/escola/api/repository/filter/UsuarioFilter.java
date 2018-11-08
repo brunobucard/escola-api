@@ -1,10 +1,10 @@
 package com.escola.api.repository.filter;
 
-public class AlunoFilter {
+public class UsuarioFilter {
 	
 	private String nome;
 	
-	private String responsavel;
+	private String email;
 
 	public String getNome() {
 		return nome;
@@ -14,14 +14,13 @@ public class AlunoFilter {
 		this.nome = nome;
 	}
 
-	public String getResponsavel() {
-		return responsavel;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setResponsavel(String responsavel) {
-		this.responsavel = responsavel;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
 	
 	
 
