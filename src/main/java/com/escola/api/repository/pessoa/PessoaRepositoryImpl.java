@@ -21,7 +21,7 @@ import com.escola.api.model.Aluno_;
 import com.escola.api.repository.aluno.AlunoRepositoryQuery;
 import com.escola.api.repository.filter.AlunoFilter;
 
-public class AlunoRepositoryImpl implements AlunoRepositoryQuery {
+public class PessoaRepositoryImpl implements AlunoRepositoryQuery {
 
 	@PersistenceContext
 	private EntityManager manager;
