@@ -51,6 +51,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepositoryQuery{
 					builder.lower(root.get(Usuario_.nome)), "%" + usuarioFilter.getNome().toLowerCase() + "%"));
 		}
 		
+		if(!StringUtils.isEmpty(usuarioFilter.getEmail())) {
+			predicates.add(builder.like(
+					builder.lower(root.get(Usuario_.email)), "%" + usuarioFilter.getEmail().toLowerCase() + "%"));
+		}
+		
 		
 		
 		return predicates.toArray(new Predicate[predicates.size()]);

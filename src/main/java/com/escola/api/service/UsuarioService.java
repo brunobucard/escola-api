@@ -1,6 +1,8 @@
 package com.escola.api.service;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,19 @@ public class UsuarioService {
 		return usuarioRepository.save(usuario);
 	}
 	
+	public Usuario atuaizar(long codigo, Usuario usuario) {
+		Usuario usuarioSalvo = buscarUsuarioPeloCodigo(codigo);
+		BeanUtils.copyProperties(usuario, usuarioSalvo, "codigo");
+		return usuarioRepository.save(usuarioSalvo);
+	}
+	
+	private Usuario buscarUsuarioPeloCodigo(Long codigo) {
+		Usuario usuarioSalvo = usuarioRepository.findOne(codigo);
+		if (usuarioSalvo == null) {
+			throw new EmptyResultDataAccessException(1);
+		}
+		return usuarioSalvo;
+	}
 	
 	
 
