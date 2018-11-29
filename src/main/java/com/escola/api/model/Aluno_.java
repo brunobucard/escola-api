@@ -1,5 +1,6 @@
 package com.escola.api.model;
 
+import java.time.LocalDate;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
@@ -24,7 +25,7 @@ public abstract class Aluno_ {
 	public static volatile SingularAttribute<Aluno, String> identidadeEmissorEstado;
 	public static volatile SingularAttribute<Aluno, String> cpf;
 	public static volatile SingularAttribute<Aluno, String> celular;
-	public static volatile SingularAttribute<Aluno, String> dataNascimento;
+	public static volatile SingularAttribute<Aluno, LocalDate> dataNascimento;
 	public static volatile SingularAttribute<Aluno, Responsavel> responsavel;
 	public static volatile SingularAttribute<Aluno, String> religiao;
 	public static volatile SingularAttribute<Aluno, String> email;

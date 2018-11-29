@@ -1,5 +1,7 @@
 package com.escola.api.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 
 import javax.persistence.Embedded;
@@ -33,7 +35,7 @@ public class Aluno {
 	
 	@NotNull
 	@Column(name="data_nascimento")
-	private String dataNascimento;
+	private LocalDate dataNascimento;
 	
 	private String naturalidade;
 	
@@ -147,11 +149,13 @@ public class Aluno {
 		this.ativo = ativo;
 	}
 
-	public String getDataNascimento() {
+
+
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
