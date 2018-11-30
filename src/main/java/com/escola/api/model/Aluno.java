@@ -1,5 +1,7 @@
 package com.escola.api.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 
 import javax.persistence.Embedded;
@@ -33,7 +35,7 @@ public class Aluno {
 	
 	@NotNull
 	@Column(name="data_nascimento")
-	private String dataNascimento;
+	private LocalDate dataNascimento;
 	
 	private String naturalidade;
 	
@@ -47,7 +49,7 @@ public class Aluno {
 	private String identidade;
 	
 	@Column(name="identidade_emissao")
-	private String identididadeEmissao;
+	private LocalDate identidadeEmissao;
 	
 	@Column(name="identidade_emissor")
 	private String identidadeEmissor;
@@ -59,7 +61,7 @@ public class Aluno {
 	private String certidaoNascimento;
 	
 	@Column(name="certidao_data")
-	private String certidaoData;
+	private LocalDate certidaoData;
 	
 	@Column(name="certidao_livro")
 	private String certidaoLivro;
@@ -122,6 +124,18 @@ public class Aluno {
 	@JoinColumn(name="codigo_responsavel")
 	private Responsavel responsavel;
 	
+	@Enumerated
+	private Cor cor;
+	
+	@Enumerated
+	@Column(name="estado_civil")
+	private EstadoCivil estadoCivil;
+	
+	@Column(name="data_ingresso")
+	private LocalDate dataIngresso;
+	
+	private String observacao;
+	
 	
 	public Long getCodigo() {
 		return codigo;
@@ -147,11 +161,13 @@ public class Aluno {
 		this.ativo = ativo;
 	}
 
-	public String getDataNascimento() {
+	
+
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -263,13 +279,7 @@ public class Aluno {
 		this.identidade = identidade;
 	}
 
-	public String getIdentididadeEmissao() {
-		return identididadeEmissao;
-	}
-
-	public void setIdentididadeEmissao(String identididadeEmissao) {
-		this.identididadeEmissao = identididadeEmissao;
-	}
+	
 
 	public String getIdentidadeEmissor() {
 		return identidadeEmissor;
@@ -295,11 +305,21 @@ public class Aluno {
 		this.certidaoNascimento = certidaoNascimento;
 	}
 
-	public String getCertidaoData() {
+	
+
+	public LocalDate getIdentidadeEmissao() {
+		return identidadeEmissao;
+	}
+
+	public void setIdentidadeEmissao(LocalDate identidadeEmissao) {
+		this.identidadeEmissao = identidadeEmissao;
+	}
+
+	public LocalDate getCertidaoData() {
 		return certidaoData;
 	}
 
-	public void setCertidaoData(String certidaoData) {
+	public void setCertidaoData(LocalDate certidaoData) {
 		this.certidaoData = certidaoData;
 	}
 
@@ -409,11 +429,50 @@ public class Aluno {
 		this.saude = saude;
 	}
 	
+	
+	
+	public Cor getCor() {
+		return cor;
+	}
+
+	public void setCor(Cor cor) {
+		this.cor = cor;
+	}
+
+	public EstadoCivil getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(EstadoCivil estadoCivil) {
+		this.estadoCivil = estadoCivil;
+	}
+	
+	
+
+	public LocalDate getDataIngresso() {
+		return dataIngresso;
+	}
+
+	public void setDataIngresso(LocalDate dataIngresso) {
+		this.dataIngresso = dataIngresso;
+	}
+	
+	
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
 	@JsonIgnore
 	@Transient
 	public boolean isInativo() {
 		return !this.ativo;
 	}
+	
 
 
 	@Override
