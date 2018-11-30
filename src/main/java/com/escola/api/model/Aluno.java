@@ -161,7 +161,7 @@ public class Aluno {
 		this.ativo = ativo;
 	}
 
-	
+
 
 	public LocalDate getDataNascimento() {
 		return dataNascimento;
