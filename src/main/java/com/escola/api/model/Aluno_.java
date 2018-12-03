@@ -36,8 +36,8 @@ public abstract class Aluno_ {
 	public static volatile SingularAttribute<Aluno, String> naturalidadeEstado;
 	public static volatile SingularAttribute<Aluno, Endereco> endereco;
 	public static volatile SingularAttribute<Aluno, String> nome;
-	public static volatile SingularAttribute<Aluno, Saude> saude;
 	public static volatile SingularAttribute<Aluno, EstadoCivil> estadoCivil;
+	public static volatile SingularAttribute<Aluno, Saude> saude;
 	public static volatile SingularAttribute<Aluno, String> certidaoCartorio;
 	public static volatile SingularAttribute<Aluno, String> identidade;
 	public static volatile SingularAttribute<Aluno, String> certidaoFolhas;

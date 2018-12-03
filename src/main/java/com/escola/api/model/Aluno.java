@@ -78,8 +78,7 @@ public class Aluno {
 	@Embedded	
 	private Endereco endereco;
 	
-	@Embedded
-	private Saude saude;
+	
 	
 	private String telefone;
 	
@@ -134,6 +133,9 @@ public class Aluno {
 	private LocalDate dataIngresso;
 	
 	private String observacao;
+	
+	@Embedded
+	private Saude saude;
 	
 	
 	public Long getCodigo() {
@@ -411,18 +413,8 @@ public class Aluno {
 		this.escolaOrigemEstado = escolaOrigemEstado;
 	}
 	
-	
+		
 
-	public Saude getSaude() {
-		return saude;
-	}
-
-	public void setSaude(Saude saude) {
-		this.saude = saude;
-	}
-	
-	
-	
 	public Cor getCor() {
 		return cor;
 	}
@@ -457,6 +449,16 @@ public class Aluno {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+	
+	
+
+	public Saude getSaude() {
+		return saude;
+	}
+
+	public void setSaude(Saude saude) {
+		this.saude = saude;
 	}
 
 	@JsonIgnore
