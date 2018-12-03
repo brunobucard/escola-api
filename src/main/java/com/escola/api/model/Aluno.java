@@ -106,8 +106,7 @@ public class Aluno {
 	
 	private String senha;
 	
-	@Column(name="nome_pai")
-	private String nomePai;
+	
 	
 	@Column(name="nome_mae")
 	private String nomeMae;
@@ -195,14 +194,7 @@ public class Aluno {
 		this.senha = senha;
 	}
 
-	public String getNomePai() {
-		return nomePai;
-	}
-
-	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
-	}
-
+	
 	public String getNomeMae() {
 		return nomeMae;
 	}

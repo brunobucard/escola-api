@@ -42,7 +42,7 @@ public class ResponsavelResource {
 	
 	
 	@GetMapping
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_RESPONSAVEL')")
+	//@PreAuthorize("hasAuthority('ROLE_PESQUISAR_RESPONSAVEL')")
 	public Page<Responsavel> pesquisar(ResponsavelFilter responsavelFilter, Pageable pageable) {
 		return responsavelRepository.filtrar(responsavelFilter, pageable);
 	}
