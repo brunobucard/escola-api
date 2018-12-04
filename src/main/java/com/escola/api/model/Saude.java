@@ -10,8 +10,7 @@ public class Saude {
 	
 	private String medicacao;
 	
-	@Column(name="doenca_congenita")
-	private Boolean doencaCongenita;
+
 	
 	private Boolean hipertensao;
 	
@@ -95,13 +94,7 @@ public class Saude {
 		this.medicacao = medicacao;
 	}
 
-	public Boolean getDoencaCongenita() {
-		return doencaCongenita;
-	}
-
-	public void setDoencaCongenita(Boolean doencaCongenita) {
-		this.doencaCongenita = doencaCongenita;
-	}
+	
 
 	public Boolean getHipertensao() {
 		return hipertensao;

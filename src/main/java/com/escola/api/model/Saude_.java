@@ -33,7 +33,6 @@ public abstract class Saude_ {
 	public static volatile SingularAttribute<Saude, String> hospitalEndereco;
 	public static volatile SingularAttribute<Saude, Boolean> epilepsia;
 	public static volatile SingularAttribute<Saude, Boolean> epilepsiaTratamento;
-	public static volatile SingularAttribute<Saude, Boolean> doencaCongenita;
 	public static volatile SingularAttribute<Saude, Boolean> diabetes;
 	public static volatile SingularAttribute<Saude, String> emergenciaParentesco;
 
