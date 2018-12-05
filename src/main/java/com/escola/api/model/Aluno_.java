@@ -24,12 +24,12 @@ public abstract class Aluno_ {
 	public static volatile SingularAttribute<Aluno, String> certidaoEstado;
 	public static volatile SingularAttribute<Aluno, Boolean> paisSeparados;
 	public static volatile SingularAttribute<Aluno, String> cpf;
+	public static volatile SingularAttribute<Aluno, Boolean> medicacaoEspecifica;
 	public static volatile SingularAttribute<Aluno, LocalDate> dataNascimento;
 	public static volatile SingularAttribute<Aluno, String> tratamentoMedicoDescricao;
 	public static volatile SingularAttribute<Aluno, LocalDate> identidadeEmissao;
 	public static volatile SingularAttribute<Aluno, DoencaContagiosa> doencaContagiosa;
 	public static volatile SingularAttribute<Aluno, Long> codigo;
-	public static volatile SingularAttribute<Aluno, Boolean> medicaoEspecifica;
 	public static volatile SingularAttribute<Aluno, String> emergenciaCelular;
 	public static volatile SingularAttribute<Aluno, String> nome;
 	public static volatile SingularAttribute<Aluno, Boolean> hipertensao;

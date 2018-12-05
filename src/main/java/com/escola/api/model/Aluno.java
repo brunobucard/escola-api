@@ -168,7 +168,7 @@ private Boolean hipertensao;
 	private String tratamentoMedicoDescricao;
 	
 	@Column(name="medicacao_especifica")
-	private Boolean medicaoEspecifica;
+	private Boolean medicacaoEspecifica;
 	
 	@Column(name="medicacao_especifica_descricao")
 	private String medicacaoEspecificaDescricao;
@@ -638,12 +638,14 @@ private Boolean hipertensao;
 		this.tratamentoMedicoDescricao = tratamentoMedicoDescricao;
 	}
 
-	public Boolean getMedicaoEspecifica() {
-		return medicaoEspecifica;
+	
+
+	public Boolean getMedicacaoEspecifica() {
+		return medicacaoEspecifica;
 	}
 
-	public void setMedicaoEspecifica(Boolean medicaoEspecifica) {
-		this.medicaoEspecifica = medicaoEspecifica;
+	public void setMedicacaoEspecifica(Boolean medicacaoEspecifica) {
+		this.medicacaoEspecifica = medicacaoEspecifica;
 	}
 
 	public String getMedicacaoEspecificaDescricao() {
