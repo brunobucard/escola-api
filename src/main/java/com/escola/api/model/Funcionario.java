@@ -1,5 +1,6 @@
 package com.escola.api.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -41,19 +42,16 @@ public class Funcionario {
 	@Column(name="identidade_emissor")
 	private String identidadeEmissor;
 	
-	@Column(name="identidade_emissor_estado")
-	private String identidadeEmissorEstado;
+	@Column(name="identidade_estado")
+	private String identidadeEstado;
 	
-	@Column(name="data_contratacao")
-	private LocalDate dataContratacao;
 	
-	@Column(name="data_demissao")
-	private LocalDate dataDemissao;
 	
 	@Embedded
 	private Endereco endereco;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name="tipo_sanguineo")
 	private TipoSanguineo sanguineo;
 	
 	@Enumerated(EnumType.STRING)
@@ -65,7 +63,62 @@ public class Funcionario {
 	
 	private String email;
 	
-	private String senha;
+	
+	private String nacionalidade;
+	
+	private String pis;
+	
+	@Column(name="carteira_trabalho")
+	private String carteiraTrabalho;
+	
+	@Column(name="carteira_trabalho_serie")
+	private String carteiraTrabalhoSerie;
+	
+	@Column(name="carteira_trabalho_emissao")
+	private LocalDate carteiraTrabalhoEmissao;
+	
+	@Column(name="carteira_trabalho_estado")
+	private String carteiraTrabalhoEstado;
+	
+	private LocalDate admissao;
+	
+	private LocalDate demissao;
+	
+	private BigDecimal salario;
+	
+	private String observacao;
+	
+	private String conjuge;
+	
+	private String naturalidade;
+	
+	@Column(name="naturalidade_estado")
+	private String naturalidadeEstado;
+	
+	private String mae;
+	
+	private String pai;
+	
+	private Boolean ativo;
+	
+	private Boolean professor;
+	
+	private String religiao;
+	
+	private String escolaridade;
+	
+	private String profissao;
+	
+	@Enumerated(EnumType.STRING)
+	private Cor cor;
+	
+	@Enumerated(EnumType.STRING)
+	private EstadoCivil estadoCivil;
+	
+
+	
+	
+	
 
 	public Long getCodigo() {
 		return codigo;
@@ -131,30 +184,9 @@ public class Funcionario {
 		this.identidadeEmissor = identidadeEmissor;
 	}
 
-	public String getIdentidadeEmissorEstado() {
-		return identidadeEmissorEstado;
-	}
+	
 
-	public void setIdentidadeEmissorEstado(String identidadeEmissorEstado) {
-		this.identidadeEmissorEstado = identidadeEmissorEstado;
-	}
-
-	public LocalDate getDataContratacao() {
-		return dataContratacao;
-	}
-
-	public void setDataContratacao(LocalDate dataContratacao) {
-		this.dataContratacao = dataContratacao;
-	}
-
-	public LocalDate getDataDemissao() {
-		return dataDemissao;
-	}
-
-	public void setDataDemissao(LocalDate dataDemissao) {
-		this.dataDemissao = dataDemissao;
-	}
-
+	
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -203,12 +235,193 @@ public class Funcionario {
 		this.email = email;
 	}
 
-	public String getSenha() {
-		return senha;
+	
+	
+
+	public String getIdentidadeEstado() {
+		return identidadeEstado;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setIdentidadeEstado(String identidadeEstado) {
+		this.identidadeEstado = identidadeEstado;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+
+	public String getPis() {
+		return pis;
+	}
+
+	public void setPis(String pis) {
+		this.pis = pis;
+	}
+
+	public String getCarteiraTrabalho() {
+		return carteiraTrabalho;
+	}
+
+	public void setCarteiraTrabalho(String carteiraTrabalho) {
+		this.carteiraTrabalho = carteiraTrabalho;
+	}
+
+	
+
+	public String getCarteiraTrabalhoSerie() {
+		return carteiraTrabalhoSerie;
+	}
+
+	public void setCarteiraTrabalhoSerie(String carteiraTrabalhoSerie) {
+		this.carteiraTrabalhoSerie = carteiraTrabalhoSerie;
+	}
+
+	public LocalDate getCarteiraTrabalhoEmissao() {
+		return carteiraTrabalhoEmissao;
+	}
+
+	public void setCarteiraTrabalhoEmissao(LocalDate carteiraTrabalhoEmissao) {
+		this.carteiraTrabalhoEmissao = carteiraTrabalhoEmissao;
+	}
+
+	public String getCarteiraTrabalhoEstado() {
+		return carteiraTrabalhoEstado;
+	}
+
+	public void setCarteiraTrabalhoEstado(String carteiraTrabalhoEstado) {
+		this.carteiraTrabalhoEstado = carteiraTrabalhoEstado;
+	}
+
+	public LocalDate getAdmissao() {
+		return admissao;
+	}
+
+	public void setAdmissao(LocalDate admissao) {
+		this.admissao = admissao;
+	}
+
+	public LocalDate getDemissao() {
+		return demissao;
+	}
+
+	public void setDemissao(LocalDate demissao) {
+		this.demissao = demissao;
+	}
+
+	public BigDecimal getSalario() {
+		return salario;
+	}
+
+	public void setSalario(BigDecimal salario) {
+		this.salario = salario;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public String getConjuge() {
+		return conjuge;
+	}
+
+	public void setConjuge(String conjuge) {
+		this.conjuge = conjuge;
+	}
+
+	public String getNaturalidade() {
+		return naturalidade;
+	}
+
+	public void setNaturalidade(String naturalidade) {
+		this.naturalidade = naturalidade;
+	}
+
+	public String getNaturalidadeEstado() {
+		return naturalidadeEstado;
+	}
+
+	public void setNaturalidadeEstado(String naturalidadeEstado) {
+		this.naturalidadeEstado = naturalidadeEstado;
+	}
+
+	public String getMae() {
+		return mae;
+	}
+
+	public void setMae(String mae) {
+		this.mae = mae;
+	}
+
+	public String getPai() {
+		return pai;
+	}
+
+	public void setPai(String pai) {
+		this.pai = pai;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public Boolean getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Boolean professor) {
+		this.professor = professor;
+	}
+
+	public String getReligiao() {
+		return religiao;
+	}
+
+	public void setReligiao(String religiao) {
+		this.religiao = religiao;
+	}
+
+	public String getEscolaridade() {
+		return escolaridade;
+	}
+
+	public void setEscolaridade(String escolaridade) {
+		this.escolaridade = escolaridade;
+	}
+
+	public String getProfissao() {
+		return profissao;
+	}
+
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+
+	public Cor getCor() {
+		return cor;
+	}
+
+	public void setCor(Cor cor) {
+		this.cor = cor;
+	}
+
+	public EstadoCivil getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(EstadoCivil estadoCivil) {
+		this.estadoCivil = estadoCivil;
 	}
 
 	@Override

@@ -176,6 +176,10 @@ private Boolean hipertensao;
 	@Column(name="nome_medico")
 	private String nomeMedico;
 	
+	@Column (name="medico_telefone")
+	private String medicoTelefone;
+	
+	
 	@Column(name="necessidade_especial")
 	@Enumerated(EnumType.STRING)
 	private NecessidadeEspecial necessidadeEspecial;
@@ -212,6 +216,35 @@ private Boolean hipertensao;
 	
 	@Column(name="hospital_telefone")
 	private String hospitalTelefone;
+	
+	@Column (name="autorizado_nome1")
+	private String autorizadoNome1;
+	
+	@Column (name="autorizado_identidade1")
+	private String autorizadoIdentidade1;
+	
+	@Column (name="autorizado_telefone1")
+	private String autorizadoTelefone1;
+	
+	@Column (name="autorizado_telefone2")
+	private String autorizadoTelefone2;
+	
+	@Column (name="autorizado_nome2")
+	private String autorizadoNome2;
+	
+	@Column (name="autorizado_identidade2")
+	private String autorizadoIdentidade2;
+	
+	private String transporte;
+	
+	@Column (name="necessidade_especial_outra")
+	private String necessidadeEspecialOutra;
+	
+	@Column (name="especialista_acompanhamento")
+	private Boolean especialistaAcompanhamento;
+	
+	@Column (name="especialista_descricao")
+	private String especialistaDescricao;
 	
 	
 	public Long getCodigo() {
@@ -758,6 +791,98 @@ private Boolean hipertensao;
 
 	public void setHospitalTelefone(String hospitalTelefone) {
 		this.hospitalTelefone = hospitalTelefone;
+	}
+	
+	
+
+	public String getMedicoTelefone() {
+		return medicoTelefone;
+	}
+
+	public void setMedicoTelefone(String medicoTelefone) {
+		this.medicoTelefone = medicoTelefone;
+	}
+
+	public String getAutorizadoNome1() {
+		return autorizadoNome1;
+	}
+
+	public void setAutorizadoNome1(String autorizadoNome1) {
+		this.autorizadoNome1 = autorizadoNome1;
+	}
+
+	public String getAutorizadoIdentidade1() {
+		return autorizadoIdentidade1;
+	}
+
+	public void setAutorizadoIdentidade1(String autorizadoIdentidade1) {
+		this.autorizadoIdentidade1 = autorizadoIdentidade1;
+	}
+
+	
+
+	public String getAutorizadoTelefone1() {
+		return autorizadoTelefone1;
+	}
+
+	public void setAutorizadoTelefone1(String autorizadoTelefone1) {
+		this.autorizadoTelefone1 = autorizadoTelefone1;
+	}
+
+	public String getAutorizadoTelefone2() {
+		return autorizadoTelefone2;
+	}
+
+	public void setAutorizadoTelefone2(String autorizadoTelefone2) {
+		this.autorizadoTelefone2 = autorizadoTelefone2;
+	}
+
+	public String getAutorizadoNome2() {
+		return autorizadoNome2;
+	}
+
+	public void setAutorizadoNome2(String autorizadoNome2) {
+		this.autorizadoNome2 = autorizadoNome2;
+	}
+
+	public String getAutorizadoIdentidade2() {
+		return autorizadoIdentidade2;
+	}
+
+	public void setAutorizadoIdentidade2(String autorizadoIdentidade2) {
+		this.autorizadoIdentidade2 = autorizadoIdentidade2;
+	}
+
+	public String getTransporte() {
+		return transporte;
+	}
+
+	public void setTransporte(String transporte) {
+		this.transporte = transporte;
+	}
+
+	public String getNecessidadeEspecialOutra() {
+		return necessidadeEspecialOutra;
+	}
+
+	public void setNecessidadeEspecialOutra(String necessidadeEspecialOutra) {
+		this.necessidadeEspecialOutra = necessidadeEspecialOutra;
+	}
+
+	public Boolean getEspecialistaAcompanhamento() {
+		return especialistaAcompanhamento;
+	}
+
+	public void setEspecialistaAcompanhamento(Boolean especialistaAcompanhamento) {
+		this.especialistaAcompanhamento = especialistaAcompanhamento;
+	}
+
+	public String getEspecialistaDescricao() {
+		return especialistaDescricao;
+	}
+
+	public void setEspecialistaDescricao(String especialistaDescricao) {
+		this.especialistaDescricao = especialistaDescricao;
 	}
 
 	@JsonIgnore

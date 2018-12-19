@@ -39,8 +39,12 @@ public class Turma {
 	@JoinTable(name="turma_funcionario", joinColumns = @JoinColumn(name="codigo_turma")
 	, inverseJoinColumns = @JoinColumn(name="codigo_funcionario"))
 	private List<Funcionario> funcionarios;
-
 	
+	
+
+	@ManyToOne
+	@JoinColumn(name="codigo_serie")
+	private Serie serie;
 
 	public Long getCodigo() {
 		return codigo;
@@ -90,6 +94,16 @@ public class Turma {
 
 	public void setFuncionarios(List<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
+	}
+	
+	
+
+	public Serie getSerie() {
+		return serie;
+	}
+
+	public void setSerie(Serie serie) {
+		this.serie = serie;
 	}
 
 	@Override
