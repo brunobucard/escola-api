@@ -1,3 +1,11 @@
+CREATE TABLE sala (
+	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	sala VARCHAR(30) NOT NULL,
+	limite_pessoa BIGINT(10),
+	tamanho DECIMAL(10,2),
+	observacao TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE serie (
 	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
 	descricao VARCHAR(60) NOT NULL
@@ -9,7 +17,9 @@ CREATE TABLE turma (
 	vaga INTEGER,
 	periodo VARCHAR(200),
 	codigo_sala BIGINT(20),
-	codigo_serie BIGINT(20) NOT NULL
+	FOREIGN KEY (codigo_sala) REFERENCES sala(codigo),
+	codigo_serie BIGINT(20) NOT NULL,
+	FOREIGN KEY (codigo_serie) REFERENCES serie(codigo)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 	
 CREATE TABLE turma_funcionario (
