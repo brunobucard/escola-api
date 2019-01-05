@@ -7,6 +7,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,6 +26,8 @@ import com.escola.api.event.RecursoCriadoEvent;
 import com.escola.api.model.Sala;
 import com.escola.api.model.Turma;
 import com.escola.api.repository.SalaRepository;
+import com.escola.api.repository.filter.SalaFilter;
+import com.escola.api.repository.filter.TurmaFilter;
 import com.escola.api.service.SalaService;
 
 @RestController
@@ -41,8 +45,8 @@ public class SalaResource {
 	
 	@GetMapping
 	@PreAuthorize("isAuthenticated()")
-	public List<Sala> listar() {
-		return salaRepository.findAll();
+	public Page<Sala> pesquisar(SalaFilter salaFilter, Pageable pageable) {
+		return salaRepository.filtrar(salaFilter, pageable);
 	}
 	
 	@GetMapping("/{codigo}")
