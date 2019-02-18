@@ -18,6 +18,8 @@ public class Disciplina {
 	
 	private String abreviacao;
 
+	
+
 	public Long getCodigo() {
 		return codigo;
 	}

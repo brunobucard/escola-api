@@ -9,5 +9,6 @@ import com.escola.api.repository.turma.TurmaRepositoryQuery;
 
 public interface TurmaRepository extends JpaRepository<Turma, Long>, TurmaRepositoryQuery {
 
+	//public Page<Turma> findByTurmaContaining(String turma, Pageable pageable);
 	public Page<Turma> findByTurmaContaining(String turma, Pageable pageable);
 }
