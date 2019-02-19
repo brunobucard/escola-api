@@ -38,6 +38,7 @@ public class DisciplinaResource {
 	@Autowired
 	private DisciplinaService disciplinaService;
 	
+	@Autowired
 	private ApplicationEventPublisher publisher;
 	
 	@GetMapping
