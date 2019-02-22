@@ -45,6 +45,16 @@ public class Turma {
 	@ManyToOne
 	@JoinColumn(name="codigo_serie")
 	private Serie serie;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="codigo_periodo_letivo")
+	private PeriodoLetivo periodoLetivo;
+	
+	@ManyToOne
+	@JoinColumn(name="codigo_grade")
+	private Grade grade;
+	
 
 	public Long getCodigo() {
 		return codigo;
@@ -104,6 +114,24 @@ public class Turma {
 
 	public void setSerie(Serie serie) {
 		this.serie = serie;
+	}
+	
+	
+
+	public PeriodoLetivo getPeriodoLetivo() {
+		return periodoLetivo;
+	}
+
+	public void setPeriodoLetivo(PeriodoLetivo periodoLetivo) {
+		this.periodoLetivo = periodoLetivo;
+	}
+
+	public Grade getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Grade grade) {
+		this.grade = grade;
 	}
 
 	@Override

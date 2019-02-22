@@ -9,7 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Grade_ {
 
 	public static volatile SingularAttribute<Grade, Long> codigo;
-	public static volatile SingularAttribute<Grade, Double> cargaHorariaTotal;
+	public static volatile SingularAttribute<Grade, Integer> cargaHorariaTotal;
 	public static volatile SingularAttribute<Grade, String> conteudoProgramatico;
 	public static volatile SingularAttribute<Grade, String> descricao;
 

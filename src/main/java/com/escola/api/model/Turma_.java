@@ -13,9 +13,11 @@ public abstract class Turma_ {
 	public static volatile SingularAttribute<Turma, Integer> vaga;
 	public static volatile SingularAttribute<Turma, Periodo> periodo;
 	public static volatile SingularAttribute<Turma, Sala> sala;
+	public static volatile SingularAttribute<Turma, Grade> grade;
 	public static volatile SingularAttribute<Turma, Serie> serie;
 	public static volatile ListAttribute<Turma, Funcionario> funcionarios;
 	public static volatile SingularAttribute<Turma, String> turma;
+	public static volatile SingularAttribute<Turma, PeriodoLetivo> periodoLetivo;
 
 }
 
