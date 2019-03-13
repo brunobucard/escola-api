@@ -73,6 +73,13 @@ public class PeriodoLetivoRepositoryImpl implements PeriodoLetivoRepositoryQuery
 			
 		}
 		
+	
+		
+		if(!StringUtils.isEmpty(periodoLetivoFilter.getAtivo())) {
+			//predicates.add(builder.equals(periodoLetivoFilter.getAtivo()));
+			
+		}
+		
 		return predicates.toArray(new Predicate[predicates.size()]);
 	}
 	

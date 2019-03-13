@@ -38,6 +38,7 @@ public class PeriodoLetivoResource {
 	@Autowired
 	private PeriodoLetivoService periodoLetivoService;
 	
+	@Autowired
 	private ApplicationEventPublisher publisher;
 	
 	@GetMapping

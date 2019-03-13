@@ -11,6 +11,4 @@ import com.escola.api.repository.periodoLetivo.PeriodoLetivoRepositoryQuery;
 public interface PeriodoLetivoRepository extends JpaRepository<PeriodoLetivo, Long>, PeriodoLetivoRepositoryQuery {
 
 	//public Page<PeriodoLetivo> findByPeriodoLetivoContaining(String periodoLetivo, Pageable pageable);
-
-	//public Page<PeriodoLetivo> findByPeriodoLetivoContaining(String periodoLetivo, Pageable pageable);
 }
