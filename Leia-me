@@ -2,17 +2,59 @@ Nome do sistema: escola-api
 
 Sistema API REST Full em java, desenvolvido com Spring.
 
+Autor: Bruno Menezes Arruda Buçard.
+
+Passos para executar o projeto Java Spring.
+
 1 - Instalar banco de dados MySQL.
-2 - Parametrizar a aplicação escola-api para ter acesso ao banco de dados MySQL:
+
+2 - Instalar o Spring Tool Suite (STS) e executar.
+
+3 - Baixar o projeto atraves do GIT para o STS.
+
+4 - Verificar se a versão da dependencia mysql-connector-java, no arquivo pom.xml do projeto, é compatível com a versão do BD MySQL.
+	Caso não seja a tag <version> deverá ser ajustada, para a versão compatível.
+
+5 - Parametrizar a aplicação escola-api para ter acesso ao banco de dados MySQL:
     As migrações no BD são realizadas através do Flyway
-    a) Abrir o application.properties e editar as linhas conforme abaixo:
+    a) Abrir o arquivo application.properties no projeto e editar as linhas conforme abaixo:
         Usuário de acesso ao BD.
             spring.datasource.username=nomedousuario
         Senha de acesso ao BD
             spring.datasource.password=senha
 
+6 -  Atualizar o projeto:
+	a) Clicar com o botão direito no diretório do projeto no STS e selecionar Maven -> Update Project.
+	b) Aguardar a atualização de todas as dependências do projeto atualizarem através do repositório Maven.
 
+7 - Executar o projeto Spring:
+	a) Clicar com o botão direito no diretório do projeto no STS e selecionar "Run as"-> Spring Boot App.
+	b) Caso o projeto esteja em execução no Console do STS apresentará a mensagem "Started EscolaApiApplication"
 
-Ao executar o sistema a primeira vez é criado o banco de dados "escolaapi", com suas tabelas, relacionamentos e dados iniciais, como o usuário "admin" (administrador do sistema).
+	Ao executar o sistema a primeira vez é criado o banco de dados "escolaapi", com suas tabelas, relacionamentos e dados iniciais, como o usuário "admin" (administrador do sistema).
 
+8 - Para realizar teste através de console API:
+	a) Abra o console API, que pode ser o Postman.
+	b) Faça login na aplicação API.
+        Execute o comando Post para o endereço: localhost:8080/oauth/token, com os parâmetros:
+		I) Na guia Authorization inserir:
+			Username: angular
+			Password: angular
 
+		II) Na guia Headers:
+			Key: Content-Type   Value: application/x-www-form-urlencoded
+
+		III) Na guia Body*:
+			Key: client	Value: angular 
+			Key: username   Value: admin@email.com
+			Key: password   Value: admin
+			Key: grant_type	Value: password
+
+		*Observação: esses dados de acesso são do usuário inicial administrador do sistema. Com ele pode-se criar novos usuários e ter acesso a todas as funcionalidades.
+    
+    c) Como retorno ao login será gerado um token de acesso em "access_token". 
+        O token deve ser copiado e usado em todas requisições como a seguir:
+        I) Na guia Authorization, no campo Type selecionar "OAuth 2.0".
+            Copiar o token no campo "Access Token".
+            No campo Header Prefix digitar "Bearer".
+        
