@@ -1,0 +1,18 @@
+Nome do sistema: escola-api
+
+Sistema API REST Full em java, desenvolvido com Spring.
+
+1 - Instalar banco de dados MySQL.
+2 - Parametrizar a aplicação escola-api para ter acesso ao banco de dados MySQL:
+    As migrações no BD são realizadas através do Flyway
+    a) Abrir o application.properties e editar as linhas conforme abaixo:
+        Usuário de acesso ao BD.
+            spring.datasource.username=nomedousuario
+        Senha de acesso ao BD
+            spring.datasource.password=senha
+
+
+
+Ao executar o sistema a primeira vez é criado o banco de dados "escolaapi", com suas tabelas, relacionamentos e dados iniciais, como o usuário "admin" (administrador do sistema).
+
+
