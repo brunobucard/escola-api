@@ -8,8 +8,9 @@ O projeto está em continuo desenvolvimento e melhoria.
  API do sistema de gestão escolar no padrão RESTFul
 
 Back-end:
-- Desenvolvido em Java 8.
+- Desenvolvido em Java 8
 - Framework Spring
+- Autenticação OAuth2
 - Hibernate
 - Banco de dados MySQL
 - Flyway, ferramenta de migração de banco de dados.
@@ -17,4 +18,4 @@ Back-end:
 
 
 --
-Se desejar pode contribuir com esse projeto.
+Se desejar, pode contribuir com esse projeto.
